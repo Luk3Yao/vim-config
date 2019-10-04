@@ -98,7 +98,7 @@ noremap <leader>tm :tabmove
 
 "buffer
 nnoremap <leader>bc :BufOnly<CR>
-nnoremap <Leader>bo :BufOnly 
+nnoremap <Leader>bo :BufOnly
 
 " I like to :quit with 'q', shrug.
 nnoremap <silent> q :<C-u>:quit<CR>
@@ -125,6 +125,9 @@ nmap <C-w>] :vertical resize +3<CR>
 
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
+
+" Trans tab into spaces
+nnoremap <silent> ,t :<C-u>silent! keeppatterns %substitute/\t/    /g<CR>
 
 " a command which  edit PLugin config easy
 nnoremap <leader>p :EditPluginSetting <Space>
