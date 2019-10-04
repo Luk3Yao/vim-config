@@ -28,7 +28,8 @@ let g:coc_global_extensions =[
     \'coc-marketplace',
     \'coc-gitignore',
     \'coc-yank',
-    \'coc-explorer'
+    \'coc-explorer',
+    \'coc-vimlsp',
     \]
 
 augroup MyAutoCmd

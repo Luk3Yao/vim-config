@@ -86,6 +86,52 @@
     "eslint.filetypes": ["javascript", "javascript.jsx", "javascriptreact"],
     "eslint.autoFix": true,
     "eslint.autoFixOnSave": true,
+    //vimlsp
+    "vimlsp.debug": {
+        "type": "boolean",
+        "default": false,
+        "description": "enable coc-vimlsp service debug"
+    },
+    "vimlsp.diagnostic.enable": {
+        "type": "boolean",
+        "default": true,
+        "description": "enable diagnostic"
+    },
+    "vimlsp.indexes.runtimepath": {
+        "type": "boolean",
+        "default": true,
+        "description": "if index vim's runtimepath files, this will effect the suggest"
+    },
+    "vimlsp.indexes.count": {
+        "type": "number",
+        "default": 3,
+        "description": "count of files index at the same time, change to greater will speed up index but will cause high CPU usage for some time"
+    },
+    "vimlsp.indexes.gap": {
+        "type": "number",
+        "default": 100,
+        "description": "time gap between parse file, change to smaller will speed up index but will cause high CPU usage for some time"
+    },
+    "vimlsp.suggest.fromVimruntime": {
+        "type": "boolean",
+        "default": true,
+        "description": "completeitems from vimruntime's vim files"
+    },
+    "vimlsp.suggest.fromRuntimepath": {
+        "type": "boolean",
+        "default": false,
+        "description": "completeitems from runtimepath's vim files, if this is true that fromVimruntime is true"
+    },
+    "vimlsp.trace.server": {
+        "type": "string",
+        "default": "off",
+        "enum": [
+            "off",
+            "messages",
+            "verbose"
+        ],
+        "description": "Trace level of vim language server"
+    },
     //golang
     "languageserver": {
       // "golang": {
