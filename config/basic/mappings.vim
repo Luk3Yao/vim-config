@@ -50,6 +50,9 @@ vnoremap mj :m'>+<CR>gv=gv
 noremap  mk :m-2<CR>
 noremap  mj :m+<CR>
 
+" Toggle fold
+nnoremap <CR> za
+
 " Start new line from any cursor position
 inoremap <S-Return> <C-o>o
 
