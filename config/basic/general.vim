@@ -148,8 +148,8 @@ set confirm
 set splitbelow
 set bsdir=buffer
 if has('vim_starting')
-	set encoding=UTF-8
-	scriptencoding UTF-8
+    set encoding=UTF-8
+    scriptencoding UTF-8
 endif
 set laststatus=2
 set showtabline=2
@@ -169,7 +169,7 @@ if has('autocmd')
 
     " Reload vim config automatically
     " autocmd BufWritePost $VIM_PATH/{*.vim,*.yaml,vimrc} nested
-	" 	\ source $MYVIMRC | redraw | silent doautocmd ColorScheme
+    "     \ source $MYVIMRC | redraw | silent doautocmd ColorScheme
 endif
 
 " auto switch im in macos
@@ -178,12 +178,21 @@ endif
 " com.baidu.inputmethod.BaiduIM.wubi
 au InsertEnter * call system('issw com.baidu.inputmethod.BaiduIM.wubi')
 au InsertLeave * call system('issw com.apple.keylayout.ABC')
+
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 " }}}
 
 " Editor UI Appearance {{{
 " --------------------
 if has('termguicolors')
-	set termguicolors
+    set termguicolors
 endif
 set noshowmode          " Don't show mode in cmd window
 set shortmess=aoOTI     " Shorten messages and don't show intro
@@ -246,39 +255,39 @@ set nospell spellfile=$VIM_PATH/spell/en.utf-8.add
 " History saving
 set history=1000
 if has('nvim')
-	set shada='300,<50,@100,s10,h
+    set shada='300,<50,@100,s10,h
 else
-	set viminfo='300,<10,@50,h,n$DATA_PATH/viminfo
+    set viminfo='300,<10,@50,h,n$DATA_PATH/viminfo
 endif
 
 " If sudo, disable vim swap/backup/undo/shada/viminfo writing
 if $SUDO_USER !=# '' && $USER !=# $SUDO_USER
-		\ && $HOME !=# expand('~'.$USER)
-		\ && $HOME ==# expand('~'.$SUDO_USER)
+        \ && $HOME !=# expand('~'.$USER)
+        \ && $HOME ==# expand('~'.$SUDO_USER)
 
-	set noswapfile
-	set nobackup
-	set nowritebackup
-	set noundofile
-	if has('nvim')
-		set shada="NONE"
-	else
-		set viminfo="NONE"
-	endif
+    set noswapfile
+    set nobackup
+    set nowritebackup
+    set noundofile
+    if has('nvim')
+        set shada="NONE"
+    else
+        set viminfo="NONE"
+    endif
 endif
 
 " Secure sensitive information, disable backup files in temp directories
 if exists('&backupskip')
-	set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*
-	set backupskip+=.vault.vim
+    set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*
+    set backupskip+=.vault.vim
 endif
 
 " Disable swap/undo/viminfo/shada files in temp directories or shm
 augroup MyAutoCmd
-	autocmd!
-	silent! autocmd BufNewFile,BufReadPre
-		\ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
-		\ setlocal noswapfile noundofile nobackup nowritebackup viminfo= shada=
+    autocmd!
+    silent! autocmd BufNewFile,BufReadPre
+        \ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
+        \ setlocal noswapfile noundofile nobackup nowritebackup viminfo= shada=
 augroup END
 
 " }}}
@@ -321,9 +330,9 @@ function! FoldText()
     return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
 endfunction
 if has('folding')
-	set foldenable
-	set foldmethod=syntax
-	set foldlevelstart=99
+    set foldenable
+    set foldmethod=syntax
+    set foldlevelstart=99
     set foldtext=FoldText()
 endif
 
