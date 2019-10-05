@@ -318,7 +318,7 @@ function! g:FoldText()
     let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
     let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
 
-    let l:info = '(' . (v:foldend - v:foldstart) . ')'
+    let l:info = '' . (v:foldend - v:foldstart) . ''
     let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
     let l:width = winwidth(0) - l:lpadding - l:infolen
 
@@ -328,7 +328,13 @@ function! g:FoldText()
 
     if index(l:wibrackets, &ft) == '-1'
         let l:start = strpart(l:start , 0, l:width - l:separatorlen)
-        let l:text = l:start . ' … ' . l:info . ' … '
+        let l:tail = printf(' (‑●‑●)> %2d', l:info)
+        let l:realen = strlen(l:start) + strlen(l:tail)
+        if winwidth(0) > 87
+            let l:text = l:start . repeat(' ', 87 - strlen(l:start) - strlen(l:tail)) . l:tail
+        else
+            let l:text = l:start . repeat(' ', winwidth(0)- strlen(l:start) - strlen(l:tail)) . l:tail
+        endif
     else
         let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
         let l:text = l:start . '… ' . l:info . ' …' . l:end
@@ -336,6 +342,7 @@ function! g:FoldText()
 
     return l:text . repeat(' ', winwidth(0) - strlen(substitute(l:text, ".", "x", "g")))
 endfunction
+
 if has('folding')
     set foldenable
     set foldmethod=syntax
