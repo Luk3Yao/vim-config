@@ -296,7 +296,7 @@ augroup END
 " -----
 
 " FastFold
-function! FoldText()
+function! g:FoldText()
     let l:lpadding = &fdc
     redir => l:signs
         execute 'silent sign place buffer='.bufnr('%')
@@ -318,16 +318,23 @@ function! FoldText()
     let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
     let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
 
-    let l:info = ' (' . (v:foldend - v:foldstart) . ')'
+    let l:info = '(' . (v:foldend - v:foldstart) . ')'
     let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
     let l:width = winwidth(0) - l:lpadding - l:infolen
 
     let l:separator = ' … '
     let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
-    let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
-    let l:text = l:start . ' … ' . l:end
+    let l:wibrackets = ['java', 'c', 'cpp', 'go']
 
-    return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
+    if index(l:wibrackets, &ft) == '-1'
+        let l:start = strpart(l:start , 0, l:width - l:separatorlen)
+        let l:text = l:start . ' … ' . l:info . ' … '
+    else
+        let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
+        let l:text = l:start . '… ' . l:info . ' …' . l:end
+    endif
+
+    return l:text . repeat(' ', winwidth(0) - strlen(substitute(l:text, ".", "x", "g")))
 endfunction
 if has('folding')
     set foldenable
