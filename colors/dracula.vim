@@ -37,7 +37,7 @@ let s:bglighter = ['#424450', 238]
 let s:bglight   = ['#343746', 237]
 let s:bg        = ['#000000', 233]
 let s:bgdark    = ['#21222C', 235]
-let s:bgdarker  = ['#191A21', 234]
+let s:bgdarker  = ['#000000', 234]
 
 let s:subtle    = ['#424450', 238]
 
@@ -250,8 +250,8 @@ call s:h('StatusLineTermNC', s:none, s:bglight)
 call s:h('WildMenu', s:bg, s:purple, [s:attrs.bold])
 call s:h('CursorLine', s:none, s:subtle)
 "
-hi! link ColorColumn  DraculaBgDark
-hi! link CursorColumn DraculaBgDark
+hi! link ColorColumn  DraculaBgDarker
+hi! link CursorColumn DraculaBgDarker
 hi! link CursorLineNr DraculaYellow
 hi! link DiffAdd      DraculaGreen
 hi! link DiffAdded    DiffAdd
