@@ -102,18 +102,10 @@ If you'd like to install plugins by yourself, create a
 ## Structure
 
 - [config/](./config) - Configuration
+  - [basic](./basic) - Basic config about Behaviour, UI etc.
+  - [dein](./dein) - dein config yaml
   - [plugins/](./config/plugins) - Plugin configurations
-  - [plugins.yaml](./config/plugins.yaml) - _**Plugins!**_
-  - local.plugins.yaml - Custom user plugins
   - [vimrc](./config/vimrc) - Initialization
-  - [init.vim](./config/init.vim) - `runtimepath` initialization
-  - [general.vim](./config/general.vim) - General configuration
-  - local.vim - Custom user settings
-  - [neovim.vim](./config/neovim.vim) - Neovim specific setup
-  - [mappings.vim](./config/mappings.vim) - Key-mappings
-  - [theme.vim](./config/theme.vim) - Color-scheme and theme setup
-  - [filetype.vim](./config/filetype.vim) - Language behavior
-  - [terminal.vim](./config/terminal.vim) - Terminal configuration
 - [ftplugin/](./ftplugin) - Language specific custom settings
 - [plugin/](./plugin) - Customized small plugins
 - [snippets/](./snippets) - Personal code snippets
@@ -124,10 +116,7 @@ If you'd like to install plugins by yourself, create a
 
 - Package management with caching enabled and lazy loading
 - Project-aware tabs and label
-- NERDTree as file-manager + Git status icons
-- Go completion via vim-go and gocode
-- Python Jedi completion, PEP8 convention
-  hex editor, sessions, and much more.
+- Completion for Go, Python, Naive Java, C etc. supported by coc.nvim
 
 _Note_ that 95% of the plugins are **[lazy-loaded]**.
 
