@@ -4,7 +4,7 @@ Lean mean Neo/vim machine, 30-45ms startup time.
 
 Best with Neovim or Vim 8 with +python3 extensions enabled.
 
-![screen.png](https://i.loli.net/2019/10/05/lo42WicvKVSzUIn.png)
+![screen.png](https://i.loli.net/2019/10/05/mtnvAb78zT62khs.png)
 
 ## Features
 
