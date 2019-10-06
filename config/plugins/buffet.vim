@@ -2,11 +2,11 @@ let g:buffet_show_index = 0
 let g:buffet_tab_icon = "\uf00a"
 let g:buffet_left_trunc_icon = "\uf0a8 (●‑●‑)"
 let g:buffet_right_trunc_icon = "(‑●‑●) \uf0a9"
-let g:buffet_separator = ""
+let g:buffet_separator = "▞"
 function! g:BuffetSetCustomColors()
     hi! BuffetCurrentBuffer cterm=NONE ctermbg=106 ctermfg=8 guibg=#FABD2F guifg=#000000
     hi! BuffetTrunc cterm=bold ctermbg=66 ctermfg=8 guibg=#5C4D7A guifg=#FFFFFF
-    hi! BuffetBuffer cterm=NONE ctermbg=239 ctermfg=8 guibg=#000000 guifg=#AFD700
+    hi! BuffetBuffer cterm=NONE ctermbg=239 ctermfg=8 guibg=#000000 guifg=#5C4D7A
     hi! BuffetTab cterm=NONE ctermbg=66 ctermfg=8 guibg=#000000 guifg=#FFFFFF
     hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#5C4D7A guifg=#FFFFFF
 endfunction
