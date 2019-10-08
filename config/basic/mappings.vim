@@ -120,8 +120,8 @@ vnoremap <Tab> >gv|
 vnoremap <S-Tab> <gv
 
 " settings for resize splitted window
-nmap <C-w>[ :vertical resize -3<CR>
-nmap <C-w>] :vertical resize +3<CR>
+nmap <C-[> :vertical resize -3<CR>
+nmap <C-]> :vertical resize +3<CR>
 
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
