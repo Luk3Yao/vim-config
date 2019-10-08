@@ -45,7 +45,7 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
   cargo install devicon-lookup # faster render the file notation
   ```
 
-- For coc modules:
+- For coc modules(if you are using yarn to install):
   ```sh
   npm install -g yarn
   yarn config set https-proxy http://localhost:3128
@@ -54,32 +54,6 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
   ```sh
   :call coc#util#build()
   ```
-
-## Install
-
-**1.** replace the `python3_host_prog` in `config/vimrc` with your py3
-
-**2.** then clone the repo to `~/.config/nvim` , open vim and it’ll install the dein but alse the other plugins automatically.
-
-**3.** After last step, code the command `:UpdataRemotePlugin` to update the deoplete with vim.
-
-### Recommended Linters
-
-- Node.js based linters:
-
-```sh
-npm -g install jshint jsxhint jsonlint stylelint sass-lint
-npm -g install raml-cop markdownlint-cli write-good
-```
-
-- Python based linters:
-
-```sh
-pip install --user pycodestyle pyflakes flake8 vim-vint proselint yamllint
-```
-
-- Shell lint: [shellcheck.net](https://www.shellcheck.net/)
-- HTML Tidy: [html-tidy.org](http://www.html-tidy.org/)
 
 ### Recommended Tools
 
@@ -91,14 +65,6 @@ pip install --user pycodestyle pyflakes flake8 vim-vint proselint yamllint
 - bat
 - rg
 - issw: [auto switch input sources on mac os](https://github.com/vovkasm/input-source-switcher.git)
-
-## User Custom Config
-
-If you want to add your own configuration, create the `config/local.vim` file
-and add your personal settings there. This file is ignored by `.gitignore`.
-
-If you'd like to install plugins by yourself, create a
-`config/local.plugins.yaml` file and manage your own plugin collection.
 
 ## Structure
 
@@ -124,6 +90,8 @@ _Note_ that 95% of the plugins are **[lazy-loaded]**.
 - issw: [auto switch input sources on mac os](https://github.com/vovkasm/input-source-switcher.git)
 
 switch to ABC input in normal mode automatically by following
+
+It's comfortable with markdown-preview.nvim and cVim
 
 ```vim
 " auto switch im in macos
