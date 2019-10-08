@@ -90,6 +90,7 @@ pip install --user pycodestyle pyflakes flake8 vim-vint proselint yamllint
 - Tern: `npm -g install tern`
 - bat
 - rg
+- issw: [auto switch input sources on mac os](https://github.com/vovkasm/input-source-switcher.git)
 
 ## User Custom Config
 
@@ -109,8 +110,6 @@ If you'd like to install plugins by yourself, create a
 - [ftplugin/](./ftplugin) - Language specific custom settings
 - [plugin/](./plugin) - Customized small plugins
 - [snippets/](./snippets) - Personal code snippets
-- [themes/](./themes) - Themes! Combination of styles and color-scheme
-- [filetype.vim](./filetype.vim) - Custom filetype detection
 
 ## Plugin Highlights
 
@@ -120,10 +119,24 @@ If you'd like to install plugins by yourself, create a
 
 _Note_ that 95% of the plugins are **[lazy-loaded]**.
 
+## Plugins
+
+### StartUp
+
+- [dein](https://github.com/Shougo/dein.vim) - ⚡️ Dark powered Vim/Neovim plugin manager
+- [spaceline.vim](https://github.com/hardcoreplayers/spaceline.vim) - vim statusline like spacemacs
+- [vim-buffet](https://github.com/bagrat/vim-buffet) - IDE-like Vim tabline
+
+## Keybindings
+
 ## ToDo
 
-- [ ] Sort out mappings of plugins by vim-which-keys
 - [ ] Read the flow source to simplify and speed up
 - [ ] Skilled more in Vim Script
-- [ ] Read the vim-buffet source
 
+## Credits
+
+Big thanks to the big guys!
+
+- [rafi](https://github.com/rafi)
+- [taigacute](https://github.com/taigacute)
