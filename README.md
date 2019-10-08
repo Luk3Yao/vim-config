@@ -91,7 +91,7 @@ _Note_ that 95% of the plugins are **[lazy-loaded]**.
 
 switch to ABC input in normal mode automatically by following
 
-It's comfortable with markdown-preview.nvim and cVim
+It's comfortable with markdown-preview.nvim and cVim while cjk mode is used.
 
 ```vim
 " auto switch im in macos
