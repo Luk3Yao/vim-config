@@ -38,17 +38,13 @@
   on_ft: go
   hook_source: source  $VIM_PATH/config/plugins/vim-go.vim
 
-- repo: tpope/vim-markdown
+- repo: godlygeek/tabular
   on_ft: markdown
-  hook_add: |
-        let g:markdown_fenced_languages = [
-          \ 'html',
-          \ 'bash=sh',
-          \ 'css',
-          \ 'javascript',
-          \ 'js=javascript',
-          \ 'go',
-          \]
+- repo: plasticboy/vim-markdown
+  depends: tabular
+  on_ft: markdown
+  hook_source: source  $VIM_PATH/config/plugins/vim-markdown.vim
+
 # Commands
 # =========
 - repo: Shougo/defx.nvim
