@@ -119,6 +119,21 @@ If you'd like to install plugins by yourself, create a
 
 _Note_ that 95% of the plugins are **[lazy-loaded]**.
 
+## Behaviour
+
+- issw: [auto switch input sources on mac os](https://github.com/vovkasm/input-source-switcher.git)
+
+switch to ABC input in normal mode automatically by following
+
+```vim
+" auto switch im in macos
+" com.apple.keylayout.ABC
+" com.baidu.inputmethod.BaiduIM.pinyin
+" com.baidu.inputmethod.BaiduIM.wubi
+au InsertEnter * call system('issw com.baidu.inputmethod.BaiduIM.wubi')
+au InsertLeave * call system('issw com.apple.keylayout.ABC')
+```
+
 ## Plugins
 
 ### StartUp
@@ -127,7 +142,22 @@ _Note_ that 95% of the plugins are **[lazy-loaded]**.
 - [spaceline.vim](https://github.com/hardcoreplayers/spaceline.vim) - vim statusline like spacemacs
 - [vim-buffet](https://github.com/bagrat/vim-buffet) - IDE-like Vim tabline
 
+### Markdown
+
+- [vim-markdown](https://github.com/plasticboy/vim-markdown) - Markdown Vim Mode http://plasticboy.com/markdown-vim-mode/
+- [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) - markdown preview plugin for (neo)vim
+- [tagbar-markdown](https://github.com/lvht/tagbar-markdown) - vim-tagbar extension for markdown
+- [vim-emoji](https://github.com/junegunn/vim-emoji) - 😃 Emoji in Vim
+
 ## Keybindings
+
+### Markdown Preview
+
+- `Space+pp` Open browser to preview
+
+### TagbarToggle
+
+- `Space+o` Open TagBar
 
 ## ToDo
 
