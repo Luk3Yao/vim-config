@@ -38,6 +38,8 @@
     "diagnostic.warningSign": "●",
     "diagnostic.displayByAle": false,
     "diagnostic.refreshOnInsertMode": true,
+    // eslint
+    "eslint.options": {"configFile": "/Users/whoami/.config/nvim/.eslintrc.json"},
     //git
     "git.enableGutters": true,
     "git.branchCharacter":"\uf408",
