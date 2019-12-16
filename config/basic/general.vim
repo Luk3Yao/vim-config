@@ -176,7 +176,7 @@ endif
 " com.apple.keylayout.ABC
 " com.baidu.inputmethod.BaiduIM.pinyin
 " com.baidu.inputmethod.BaiduIM.wubi
-au InsertEnter * call system('issw com.baidu.inputmethod.BaiduIM.wubi')
+" au InsertEnter * call system('issw com.baidu.inputmethod.BaiduIM.wubi')
 au InsertLeave * call system('issw com.apple.keylayout.ABC')
 
 " Triger `autoread` when files changes on disk
