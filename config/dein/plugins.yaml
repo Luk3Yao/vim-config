@@ -4,6 +4,7 @@
 # StartUp
 # ===============
 - repo: Shougo/dein.vim
+- repo: wsdjeg/dein-ui.vim
 - repo: oneTOinf/spaceline.vim
   hook_add: let g:spaceline_seperate_style= 'none'
 - repo: bagrat/vim-buffet
@@ -67,8 +68,6 @@
   on_cmd: [Colors,Rg,Buffers]
   on_func: Fzf_dev
   hook_source: source  $VIM_PATH/config/plugins/fzf.vim
-
-- { repo: taigacute/magit.vim, on_cmd: Magit }
 
 - { repo: lambdalisue/gina.vim, on_cmd: Gina }
 
