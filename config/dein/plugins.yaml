@@ -6,7 +6,7 @@
 - repo: Shougo/dein.vim
 - repo: wsdjeg/dein-ui.vim
 - repo: hardcoreplayers/spaceline.vim
-  hook_add: let g:spaceline_seperate_style= 'none'
+  hook_add: let g:spaceline_seperate_style= 'curve'
 - repo: bagrat/vim-buffet
   hook_add: source $VIM_PATH/config/plugins/buffet.vim
 
@@ -80,13 +80,6 @@
   build: cd app & yarn install
   hook_add: |
     let g:mkdp_auto_close = 0
-
-- repo: junegunn/goyo.vim
-  on_cmd: Goyo
-  hook_source: source  $VIM_PATH/config/plugins/goyo.vim
-
-- repo: junegunn/Limelight.vim
-  on_cmd: Limelight
 
 - repo: majutsushi/tagbar
   on_cmd: TagbarToggle

@@ -4,10 +4,10 @@ let g:buffet_left_trunc_icon = "\uf0a8 (●‑●‑)"
 let g:buffet_right_trunc_icon = "(‑●‑●) \uf0a9"
 let g:buffet_separator = "▞"
 function! g:BuffetSetCustomColors()
-    hi! BuffetCurrentBuffer cterm=NONE ctermbg=106 ctermfg=8 guibg=#FABD2F guifg=#000000
+    hi! BuffetCurrentBuffer cterm=NONE ctermbg=106 ctermfg=8 guibg=#5C4D7A guifg=#FFFFFF
     hi! BuffetTrunc cterm=bold ctermbg=66 ctermfg=8 guibg=#FABD2E guifg=#FFFFFF
-    hi! BuffetBuffer cterm=NONE ctermbg=239 ctermfg=8 guibg=#000000 guifg=#FABD2E
-    hi! BuffetTab cterm=NONE ctermbg=66 ctermfg=8 guibg=#000000 guifg=#FFFFFF
+    hi! BuffetBuffer cterm=NONE ctermbg=239 ctermfg=8 guibg=#373433 guifg=#FABD2E
+    hi! BuffetTab cterm=NONE ctermbg=66 ctermfg=8 guibg=#373433 guifg=#FFFFFF
     hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#FABD2E guifg=#FFFFFF
 endfunction
 
