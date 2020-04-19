@@ -6,7 +6,6 @@ endif
 
 " Set main configuration directory as parent directory
 let $VIM_PATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
-let s:user_settings_path = expand('~/.thinkvim.d/local_settings.vim')
 
 " Regular Vim doesn't add custom configuration directories, if you use one
 if &runtimepath !~# $VIM_PATH
@@ -92,36 +91,6 @@ function! s:check_custom_settings(filename)abort
        endif
        return 1
 endfunction
-
-function! s:source_custom(path, ...) abort
-  let use_global = get(a:000, 0, !has('vim_starting'))
-  let abspath = resolve(expand('~/.thinkvim.d' . a:path))
-  if !use_global
-    execute 'source' fnameescape(abspath)
-    return
-  endif
-
-  " substitute all 'set' to 'setglobal'
-  let content = map(readfile(abspath),
-        \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
-  " create tempfile and source the tempfile
-  let tempfile = tempname()
-  try
-    call writefile(content, tempfile)
-    execute 'source' fnameescape(tempfile)
-  finally
-    if filereadable(tempfile)
-      call delete(tempfile)
-    endif
-  endtry
-endfunction
-" Load user custom local settings
-if filereadable(s:user_settings_path)
-	if s:check_custom_settings(s:user_settings_path)
-		call s:source_custom('/local_settings.vim')
-	endif
-endif
-
 
 set secure
 

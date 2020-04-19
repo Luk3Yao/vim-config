@@ -5,7 +5,7 @@
 # ===============
 - repo: Shougo/dein.vim
 - repo: wsdjeg/dein-ui.vim
-- repo: oneTOinf/spaceline.vim
+- repo: hardcoreplayers/spaceline.vim
   hook_add: let g:spaceline_seperate_style= 'none'
 - repo: bagrat/vim-buffet
   hook_add: source $VIM_PATH/config/plugins/buffet.vim
