@@ -13,6 +13,7 @@
 - repo: arecarn/vim-clean-fold
 - repo: blueyed/vim-diminactive
 - repo: camspiers/animate.vim
+  hook_add: source $VIM_PATH/config/plugins/animate.vim
 - repo: camspiers/lens.vim
 - repo: junegunn/goyo.vim
 - repo: junegunn/limelight.vim
