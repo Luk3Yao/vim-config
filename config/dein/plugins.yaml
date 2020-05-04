@@ -15,6 +15,7 @@
 - repo: camspiers/animate.vim
   hook_add: source $VIM_PATH/config/plugins/animate.vim
 - repo: camspiers/lens.vim
+  hook_add: source $VIM_PATH/config/plugins/lens.vim
 - repo: junegunn/goyo.vim
 - repo: junegunn/limelight.vim
 - repo: lifepillar/vim-gruvbox8
