@@ -1,6 +1,6 @@
 {
     "suggest.triggerAfterInsertEnter": true,
-    "suggest.timeout": 500,
+    "suggest.timeout": 5000,
     "suggest.noselect": false,
     "suggest.detailField":"abbr",
     "suggest.snippetIndicator": "🌟",
@@ -83,6 +83,7 @@
         "l" : "expandOrShrink"
     },
     //python
+    "python.pythonPath": "/usr/local/bin/python3",
     "python.autoComplete.addBrackets": true,
     // eslint
     "eslint.filetypes": ["javascript", "javascript.jsx", "javascriptreact"],
