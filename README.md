@@ -106,7 +106,7 @@ au InsertLeave * call system('issw com.apple.keylayout.ABC')
 
 ### StartUp
 
-- [dein](https://github.com/Shougo/dein.vim) - ⚡️ Dark powered Vim/Neovim plugin manager
+- [dein](https://github.com/Shougo/dein.vim) - ✨ Dark powered Vim/Neovim plugin manager
 - [spaceline.vim](https://github.com/hardcoreplayers/spaceline.vim) - vim statusline like spacemacs
 - [vim-buffet](https://github.com/bagrat/vim-buffet) - IDE-like Vim tabline
 
@@ -115,7 +115,7 @@ au InsertLeave * call system('issw com.apple.keylayout.ABC')
 - [vim-markdown](https://github.com/plasticboy/vim-markdown) - Markdown Vim Mode http://plasticboy.com/markdown-vim-mode/
 - [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) - markdown preview plugin for (neo)vim
 - [tagbar-markdown](https://github.com/lvht/tagbar-markdown) - vim-tagbar extension for markdown
-- [vim-emoji](https://github.com/junegunn/vim-emoji) - 😃 Emoji in Vim
+- [vim-emoji](https://github.com/junegunn/vim-emoji) - 😄 Emoji in Vim
 
 ## Keybindings
 

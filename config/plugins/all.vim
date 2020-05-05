@@ -204,8 +204,9 @@ if dein#tap('defx.nvim')
 endif
 
 if dein#tap('tagbar')
-    nnoremap <silent> <Leader>o   :<C-u>TagbarOpenAutoClose<CR>
-
+    nnoremap <silent> <Leader>o
+        \ :<C-u>TagbarOpenAutoClose<CR>
+        \ :<C-u>call animate#window_percent_width(-37)<CR>
     " Also use h/l to open/close folds
     let g:tagbar_map_closefold = ['h', '-', 'zc']
     let g:tagbar_map_openfold = ['l', '+', 'zo']
@@ -218,6 +219,10 @@ endif
 
 if dein#tap("markdown-preview.nvim")
     nnoremap <silent> <leader>pp :MarkdownPreview<CR>
+endif
+
+if dein#tap("vimtex")
+    nnoremap <leader>pt :call CompileMarkdown()<CR>
 endif
 
 if dein#tap('vim-startify')
