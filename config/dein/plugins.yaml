@@ -5,23 +5,15 @@
 # ===============
 - repo: Shougo/dein.vim
 - repo: wsdjeg/dein-ui.vim
-- repo: hardcoreplayers/spaceline.vim
-  hook_add: let g:spaceline_seperate_style= 'curve'
+- repo: Luk3Yao/spaceline.vim
+  hook_add: let g:spaceline_seperate_style= 'none'
 - repo: bagrat/vim-buffet
   hook_add: source $VIM_PATH/config/plugins/buffet.vim
 
-- repo: arecarn/vim-clean-fold
-- repo: blueyed/vim-diminactive
 - repo: camspiers/animate.vim
   hook_add: source $VIM_PATH/config/plugins/animate.vim
 - repo: camspiers/lens.vim
   hook_add: source $VIM_PATH/config/plugins/lens.vim
-- repo: junegunn/goyo.vim
-- repo: junegunn/limelight.vim
-- repo: lifepillar/vim-gruvbox8
-- repo: nathanaelkane/vim-indent-guides
-- repo: vim-scripts/folddigest.vim
-- repo: wincent/loupe
 
 # Language
 # ========
