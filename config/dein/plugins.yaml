@@ -38,6 +38,14 @@
       let g:tagbar_type_javiascript = { 'ctagsbin': 'jsctags' }
     endif
 
+- repo: kassio/neoterm
+
+- repo: camspiers/animate.vim
+  hook_add: source $VIM_PATH/config/plugins/animate.vim
+
+- repo: camspiers/lens.vim
+  hook_add: source $VIM_PATH/config/plugins/lens.vim
+
 # =============================================================================
 # Prompts
 # =============================================================================

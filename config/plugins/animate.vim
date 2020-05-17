@@ -1,5 +1,5 @@
 " Animate {{{
-let g:animate#duration = 233.0
+let g:animate#duration = 1666.0
 " }}}
 
 " Remap arrows to resize

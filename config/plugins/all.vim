@@ -78,7 +78,7 @@ endif
 if dein#tap('defx.nvim')
     nnoremap <silent> <Leader>e
         \ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
-        " \ :<C-u>call animate#window_percent_width(-30)<CR>
+        \ :<C-u>call animate#window_percent_width(-30)<CR>
     nnoremap <silent> <Leader>F
         \ :<C-u>Defx -resume -toggle -search=`expand('%:p')` `getcwd()`<CR>
 endif

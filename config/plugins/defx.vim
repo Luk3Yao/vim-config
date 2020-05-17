@@ -5,7 +5,7 @@
 " Defx
 call defx#custom#option('_', {
     \ 'columns': 'indent:git:icons:filename',
-    \ 'winwidth': 30,
+    \ 'winwidth': 45,
     \ 'split': 'vertical',
     \ 'direction': 'topleft',
     \ 'show_ignored_files': 0,
