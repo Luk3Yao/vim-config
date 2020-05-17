@@ -1,6 +1,36 @@
 "Plugin key settings
 
-" Coc {{{
+if dein#tap('denite.nvim')
+    nnoremap <silent><LocalLeader>m :<C-u>Denite menu<CR>
+    noremap zl :<C-u>call <SID>my_denite_outline(&filetype)<CR>
+    noremap zL :<C-u>call <SID>my_denite_decls(&filetype)<CR>
+    noremap zT :<C-u>call <SID>my_denite_file_rec_goroot()<CR>
+
+    nnoremap <silent> <Leader>gl :<C-u>Denite gitlog:all<CR>
+    nnoremap <silent> <Leader>gh :<C-u>Denite gitbranch<CR>
+    function! s:my_denite_outline(filetype) abort
+    execute 'Denite' a:filetype ==# 'go' ? "decls:'%:p'" : 'outline'
+    endfunction
+    function! s:my_denite_decls(filetype) abort
+    if a:filetype ==# 'go'
+        Denite decls
+    else
+        call denite#util#print_error('decls does not support filetypes except go')
+    endif
+    endfunction
+    function! s:my_denite_file_rec_goroot() abort
+    if !executable('go')
+        call denite#util#print_error('`go` executable not found')
+        return
+    endif
+    let out = system('go env | grep ''^GOROOT='' | cut -d\" -f2')
+    let goroot = substitute(out, '\n', '', '')
+    call denite#start(
+        \ [{'name': 'file/rec', 'args': [goroot]}],
+        \ {'input': '.go'})
+    endfunction
+endif
+
 if dein#tap('coc.nvim')
     " Using CocList
     " Show all diagnostics
@@ -46,7 +76,8 @@ if dein#tap('coc.nvim')
     nmap [g <Plug>(coc-git-prevchunk)
     nmap ]g <Plug>(coc-git-nextchunk)
     " show chunk diff at current position
-    nmap gs <Plug>(coc-git-chunkinfo) " show commit contains current position
+    nmap gs <Plug>(coc-git-chunkinfo)
+    " show commit contains current position
     nmap gm <Plug>(coc-git-commit)
     nnoremap <silent> <leader>cg  :<C-u>CocList --normal gstatus<CR>
     " float window scroll
@@ -73,7 +104,96 @@ if dein#tap('coc.nvim')
         \ ' --sources=buffer+,file+' .
         \ ' --file-columns=git,selection,icon,clip,indent,filename,size ' . expand('%:p:h')<CR>
 endif
-" }}}
+
+if dein#tap('fzf.vim')
+    nnoremap <silent> <leader>fc :Colors<CR>
+    nnoremap <silent> <leader>fb :Buffers<CR>
+    nnoremap <silent> <leader>ff :call Fzf_dev()<CR>
+    nnoremap <silent> <leader>fr :Rg<CR>
+    nnoremap <silent> <leader>fw :Rg <C-R><C-W><CR>
+endif
+
+if dein#tap('vim-easy-align')
+    " Start interactive EasyAlign in visual mode (e.g. vipga)
+    xmap ga <Plug>(EasyAlign)
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    nmap ga <Plug>(EasyAlign)
+endif
+
+
+if dein#tap('vim-go')
+     nnoremap <silent> <LocalLeader>gi :GoImpl<CR>
+     nnoremap <silent> <LocalLeader>gd :GoDescribe<CR>
+     nnoremap <silent> <LocalLeader>gc :GoCallees<CR>
+     nnoremap <silent> <LocalLeader>gC :GoCallers<CR>
+     nnoremap <silent> <LocalLeader>gs :GoCallstack<CR>
+endif
+
+if dein#tap('vim-easygit')
+    nnoremap <silent> <Leader>gd :Gdiff<CR>
+    nnoremap <silent> <Leader>gc :Gcommit<CR>
+    nnoremap <silent> <Leader>gb :Gblame<CR>
+    nnoremap <silent> <Leader>gB :Gbrowse<CR>
+    nnoremap <silent> <Leader>gS :Gstatus<CR>
+    " nnoremap <silent> <localleader>gp :Gpush<CR>
+endif
+
+if dein#tap('magit.vim')
+    nnoremap <silent> mg :Magit<CR>
+endif
+
+if dein#tap('gina.vim')
+    nnoremap <silent><Leader>gp :Gina push<CR>
+endif
+
+if dein#tap('vim-mundo')
+    nnoremap <silent> <leader>m :MundoToggle<CR>
+endif
+
+if dein#tap('vim-choosewin')
+    nmap -         <Plug>(choosewin)
+    nmap <Leader>- :<C-u>ChooseWinSwapStay<CR>
+endif
+
+if dein#tap('accelerated-jk')
+    nmap <silent>j <Plug>(accelerated_jk_gj)
+    nmap <silent>k <Plug>(accelerated_jk_gk)
+endif
+
+if dein#tap('caw.vim')
+    function! InitCaw() abort
+        if ! &l:modifiable
+            silent! nunmap <buffer> gc
+            silent! xunmap <buffer> gc
+            silent! nunmap <buffer> gcc
+            silent! xunmap <buffer> gcc
+        else
+            nmap <buffer> gc <Plug>(caw:prefix)
+            xmap <buffer> gc <Plug>(caw:prefix)
+            nmap <buffer> gcc <Plug>(caw:hatpos:toggle)
+            xmap <buffer> gcc <Plug>(caw:hatpos:toggle)
+        endif
+    endfunction
+    autocmd FileType * call InitCaw()
+    call InitCaw()
+endif
+
+
+if dein#tap('comfortable-motion.vim')
+    nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
+    nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
+    nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+    nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+endif
+
+if dein#tap('python_match.vim')
+    nmap <buffer> {{ [%
+    nmap <buffer> }} ]%
+endif
+
+if dein#tap('goyo.vim')
+    nnoremap <Leader>G :Goyo<CR>
+endif
 
 if dein#tap('defx.nvim')
     nnoremap <silent> <Leader>e
@@ -92,17 +212,57 @@ if dein#tap('tagbar')
     let g:tagbar_map_openfold = ['l', '+', 'zo']
 endif
 
-if dein#tap('fzf.vim')
-    nnoremap <silent> <leader>fc :Colors<CR>
-    nnoremap <silent> <leader>fb :Buffers<CR>
-    nnoremap <silent> <leader>ff :call Fzf_dev()<CR>
-    nnoremap <silent> <leader>fr :Rg<CR>
-    nnoremap <silent> <leader>fw :Rg <C-R><C-W><CR>
-endif
-
 if dein#tap('vim-sidemenu')
     nmap <Leader>l <Plug>(sidemenu)
     xmap <Leader>l <Plug>(sidemenu-visual)
+endif
+
+if dein#tap("markdown-preview.nvim")
+    nnoremap <silent> <leader>pp :MarkdownPreview<CR>
+endif
+
+if dein#tap("vimtex")
+    nnoremap <leader>pt :call CompileMarkdown()<CR>
+endif
+
+if dein#tap('vim-startify')
+    nnoremap <silent> <leader>s :Startify<CR>
+endif
+
+if dein#tap('vim-quickrun')
+    nnoremap <silent> <localleader>r :QuickRun<CR>
+endif
+
+if dein#tap('dash.vim')
+        nnoremap <silent><leader>d :Dash<CR>
+endif
+
+if dein#tap('vim-expand-region')
+        xmap v <Plug>(expand_region_expand)
+        xmap V <Plug>(expand_region_shrink)
+endif
+
+if dein#tap('splitjoin.vim')
+    let g:splitjoin_join_mapping = ''
+    let g:splitjoin_split_mapping = ''
+    nmap sj :SplitjoinJoin<CR>
+    nmap sk :SplitjoinSplit<CR>
+endif
+
+if dein#tap('vista.vim')
+    nnoremap <silent><localleader>v :Vista!!<CR>
+    nnoremap <silent><leader>fv     :Vista finder coc<CR>
+endif
+
+if dein#tap('ale')
+    nmap [a <Plug>(ale_next_wrap)
+    nmap ]a <Plug>(ale_previous_wrap)
+endif
+
+if dein#tap('vim-easymotion')
+    nmap <Leader><Leader>w <Plug>(easymotion-w)
+    nmap <Leader><Leader>f <Plug>(easymotion-f)
+    nmap <Leader><Leader>b <Plug>(easymotion-b)
 endif
 
 if dein#tap('vim-which-key')
@@ -112,3 +272,64 @@ if dein#tap('vim-which-key')
     nnoremap <silent>]              :<c-u>WhichKey  ']'<CR>
 endif
 
+if dein#tap('vim-smartchr')
+    inoremap <expr> , smartchr#one_of(',', ',')
+    autocmd FileType go inoremap <buffer><expr> ;
+            \ smartchr#loop(':=',';')
+    autocmd FileType go inoremap <buffer> <expr> .
+          \ smartchr#loop('.', '<-', '->','...')
+endif
+
+if dein#tap('vim-niceblock')
+    xmap I  <Plug>(niceblock-I)
+    xmap A  <Plug>(niceblock-A)
+endif
+
+if dein#tap('vim-sandwich')
+    nmap <silent> sa <Plug>(operator-sandwich-add)
+    xmap <silent> sa <Plug>(operator-sandwich-add)
+    omap <silent> sa <Plug>(operator-sandwich-g@)
+    nmap <silent> sd <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
+    xmap <silent> sd <Plug>(operator-sandwich-delete)
+    nmap <silent> sr <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
+    xmap <silent> sr <Plug>(operator-sandwich-replace)
+    nmap <silent> sdb <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
+    nmap <silent> srb <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
+    omap ib <Plug>(textobj-sandwich-auto-i)
+    xmap ib <Plug>(textobj-sandwich-auto-i)
+    omap ab <Plug>(textobj-sandwich-auto-a)
+    xmap ab <Plug>(textobj-sandwich-auto-a)
+    omap is <Plug>(textobj-sandwich-query-i)
+    xmap is <Plug>(textobj-sandwich-query-i)
+    omap as <Plug>(textobj-sandwich-query-a)
+    xmap as <Plug>(textobj-sandwich-query-a)
+endif
+
+if dein#tap('actionmenu.nvim')
+    nmap <silent> <LocalLeader>s :call ActionMenuCodeActions()<CR>
+    let s:code_actions = []
+
+func! ActionMenuCodeActions() abort
+  let s:code_actions = CocAction('codeActions')
+  let l:menu_items = map(copy(s:code_actions), { index, item -> item['title'] })
+  call actionmenu#open(l:menu_items, 'ActionMenuCodeActionsCallback')
+endfunc
+
+func! ActionMenuCodeActionsCallback(index, item) abort
+  if a:index >= 0
+    let l:selected_code_action = s:code_actions[a:index]
+    let l:response = CocAction('doCodeAction', l:selected_code_action)
+  endif
+endfunc
+endif
+
+if dein#tap('vim-operator-replace')
+    xmap p <Plug>(operator-replace)
+endif
+
+if dein#tap('vim-textobj-multiblock')
+    omap <silent> ab <Plug>(textobj-multiblock-a)
+    omap <silent> ib <Plug>(textobj-multiblock-i)
+    xmap <silent> ab <Plug>(textobj-multiblock-a)
+    xmap <silent> ib <Plug>(textobj-multiblock-i)
+endif
