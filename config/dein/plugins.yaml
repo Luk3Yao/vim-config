@@ -6,7 +6,7 @@
 - repo: wsdjeg/dein-ui.vim
 
 - repo: Luk3Yao/spaceline.vim
-  hook_add: let g:spaceline_seperate_style= 'none'
+  hook_add: let g:spaceline_seperate_style= 'slant-cons'
 
 # =============================================================================
 # Appearance & UI Elements & Animations
@@ -65,6 +65,16 @@
   if: executable('ctags')
   on_path: .*
   hook_add: source $VIM_PATH/config/plugins/vim-gutentags.vim
+
+- repo: junegunn/fzf
+  build: './install --all'
+  merged: 0
+
+- repo: junegunn/fzf.vim
+  depends: fzf
+  on_cmd: [Colors,Rg,Buffers]
+  on_func: Fzf_dev
+  hook_source: source $VIM_PATH/config/plugins/fzf.vim
 
 # =============================================================================
 # Completion
