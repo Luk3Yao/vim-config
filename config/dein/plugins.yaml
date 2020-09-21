@@ -38,12 +38,6 @@
 
 - repo: kassio/neoterm
 
-- repo: Luk3Yao/animate.vim
-  hook_add: source $VIM_PATH/config/plugins/animate.vim
-
-- repo: Luk3Yao/lens.vim
-  hook_add: source $VIM_PATH/config/plugins/lens.vim
-
 - repo: t9md/vim-choosewin
   on_map: { n: <Plug> }
   hook_source: source $VIM_PATH/config/plugins/vim-choosewin.vim
@@ -81,10 +75,10 @@
 # =============================================================================
 # Search & Motion
 # =============================================================================
-- repo: ludovicchabant/vim-gutentags
-  if: executable('ctags')
-  on_path: .*
-  hook_add: source $VIM_PATH/config/plugins/vim-gutentags.vim
+# - repo: ludovicchabant/vim-gutentags
+#   if: executable('ctags')
+#   on_path: .*
+#   hook_add: source $VIM_PATH/config/plugins/vim-gutentags.vim
 
 - repo: junegunn/fzf
   build: './install --all'
