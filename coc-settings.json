@@ -79,7 +79,7 @@
     "explorer.icon.expanded": "▾",
     "explorer.icon.shrinked": "▸",
     "explorer.icon.enableNerdfont": true,
-    "explorer.keyMappings": {
+    "explorer.keyMappings.global": {
         "l" : "expandOrShrink"
     },
     //python

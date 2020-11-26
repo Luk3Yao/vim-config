@@ -198,7 +198,7 @@ endif
 if dein#tap('defx.nvim')
     nnoremap <silent> <Leader>e
         \ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
-        \ :<C-u>call animate#window_percent_width(-30)<CR>
+        " \ :<C-u>call animate#window_percent_width(-30)<CR>
     nnoremap <silent> <Leader>F
         \ :<C-u>Defx -resume -toggle -search=`expand('%:p')` `getcwd()`<CR>
 endif
@@ -206,7 +206,7 @@ endif
 if dein#tap('tagbar')
     nnoremap <silent> <Leader>o
         \ :<C-u>TagbarOpenAutoClose<CR>
-        \ :<C-u>call animate#window_percent_width(-37)<CR>
+        " \ :<C-u>call animate#window_percent_width(-37)<CR>
     " Also use h/l to open/close folds
     let g:tagbar_map_closefold = ['h', '-', 'zc']
     let g:tagbar_map_openfold = ['l', '+', 'zo']
