@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/whoami/Library/Python/3.8/lib/python/site-packages/photon'
 let g:netrw_dirhist_5='/Users/whoami/.tmux'
 let g:netrw_dirhist_4='/Users/whoami/Workspace/pythonista/.git'
 let g:netrw_dirhist_3='/Users/whoami/.gopher/src/smedia2/templates/scripts'

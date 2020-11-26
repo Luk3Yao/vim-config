@@ -5,7 +5,7 @@
 
 - repo: wsdjeg/dein-ui.vim
 
-- repo: Luk3Yao/spaceline.vim
+- repo: glepnir/spaceline.vim
   hook_add: let g:spaceline_seperate_style= 'arrow'
 
 # =============================================================================
@@ -37,12 +37,6 @@
     endif
 
 - repo: kassio/neoterm
-
-- repo: Luk3Yao/animate.vim
-  hook_add: source $VIM_PATH/config/plugins/animate.vim
-
-- repo: Luk3Yao/lens.vim
-  hook_add: source $VIM_PATH/config/plugins/lens.vim
 
 - repo: t9md/vim-choosewin
   on_map: { n: <Plug> }
