@@ -75,10 +75,10 @@
 # =============================================================================
 # Search & Motion
 # =============================================================================
-- repo: ludovicchabant/vim-gutentags
-  if: executable('ctags')
-  on_path: .*
-  hook_add: source $VIM_PATH/config/plugins/vim-gutentags.vim
+# - repo: ludovicchabant/vim-gutentags
+#   if: executable('ctags')
+#   on_path: .*
+#   hook_add: source $VIM_PATH/config/plugins/vim-gutentags.vim
 
 - repo: junegunn/fzf
   build: './install --all'
