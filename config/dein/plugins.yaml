@@ -5,7 +5,7 @@
 
 - repo: wsdjeg/dein-ui.vim
 
-- repo: Luk3Yao/spaceline.vim
+- repo: glepnir/spaceline.vim
   hook_add: let g:spaceline_seperate_style= 'arrow'
 
 # =============================================================================
