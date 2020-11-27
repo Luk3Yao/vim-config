@@ -97,3 +97,4 @@
   merge: 0
   rev: release
   hook_add: source  $VIM_PATH/config/plugins/coc.vim
+
