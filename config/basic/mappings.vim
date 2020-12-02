@@ -155,3 +155,19 @@ noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
 
 " reload $MYVIMRC
 nnoremap <Leader>r :source $MYVIMRC<CR>
+
+" In Mac OS X, mapping <S-space> does not work, but the following
+" is better (press the "apple" key and the space key).
+" Note that this will conflict with the spotlight shortcut
+" :imap <D-space> <Esc>
+" On gvim and Linux console Vim, you can use Alt-Space.
+" :imap <M-Space> <Esc>
+" Press Shift-Space (may not work on your system).
+" inoremap <S-Space> <Esc>
+" Try the following so Shift-Space also enters insert mode.
+" nnoremap <S-Space> i
+" Two semicolon are easy to type.
+inoremap <LocalLeader><TAB> <ESC>
+inoremap ,, <ESC>
+
+
