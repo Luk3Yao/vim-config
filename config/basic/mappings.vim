@@ -168,6 +168,5 @@ nnoremap <Leader>r :source $MYVIMRC<CR>
 " nnoremap <S-Space> i
 " Two semicolon are easy to type.
 inoremap <LocalLeader><TAB> <ESC>
-inoremap ,, <ESC>
-
+inoremap <Leader>; <ESC>
 
