@@ -24,6 +24,7 @@ cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
 noremap <Leader>w :w<CR>
 imap <C-S> <esc>:w<CR>
 imap <C-Q> <esc>:wq<CR>
+imap <C-G> <esc>
 
 " Save a file with sudo
 " http://forrst.com/posts/Use_w_to_sudo_write_a_file_with_Vim-uAN
