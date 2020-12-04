@@ -129,7 +129,7 @@ nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
 " Trans tab into spaces
 nnoremap <silent> ,t :<C-u>silent! keeppatterns %substitute/\t/    /g<CR>
 
-" a command which  edit PLugin config easy
+" a command which  edit Plugin config easy
 nnoremap <leader>p :EditPluginSetting <Space>
 
 nmap <leader>1 <Plug>BuffetSwitch(1)
@@ -166,7 +166,5 @@ nnoremap <Leader>r :source $MYVIMRC<CR>
 " inoremap <S-Space> <Esc>
 " Try the following so Shift-Space also enters insert mode.
 " nnoremap <S-Space> i
-" Two semicolon are easy to type.
-inoremap <LocalLeader><TAB> <ESC>
 inoremap <Leader>; <ESC>
 
