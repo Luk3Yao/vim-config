@@ -65,7 +65,7 @@ vmap <Leader><Leader> <Esc>
 nnoremap  ]b :bp<CR>
 nnoremap  [b :bn<CR>
 "delete buffer
-nnoremap <C-x>  :bd<CR>
+" nnoremap <C-x>  :bd<CR>
 
 "switch windw
 nnoremap <C-h> <C-w>h
