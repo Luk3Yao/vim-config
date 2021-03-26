@@ -12,7 +12,6 @@ let g:coc_global_extensions =[
     \'coc-emmet',
     \'coc-tsserver',
     \'coc-pairs',
-    \'coc-java',
     \'coc-json',
     \'coc-python',
     \'coc-imselect',
