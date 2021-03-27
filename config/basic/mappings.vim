@@ -131,7 +131,7 @@ nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
 nnoremap <silent> ,t :<C-u>silent! keeppatterns %substitute/\t/    /g<CR>
 
 " a command which  edit Plugin config easy
-nnoremap <leader>p :EditPluginSetting <Space>
+nnoremap <leader>x 0wd$
 
 nmap <leader>1 <Plug>BuffetSwitch(1)
 nmap <leader>2 <Plug>BuffetSwitch(2)
@@ -156,4 +156,3 @@ noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
 
 " reload $MYVIMRC
 nnoremap <Leader>r :source $MYVIMRC<CR>
-
