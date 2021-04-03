@@ -130,8 +130,12 @@ nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
 " Trans tab into spaces
 nnoremap <silent> ,t :<C-u>silent! keeppatterns %substitute/\t/    /g<CR>
 
-" a command which  edit Plugin config easy
+" margin-strip-cut
 nnoremap <leader>x 0wd$
+" margin-strip-cut paste to tail of nexline
+nnoremap <leader>v 0wd$j$p
+" remove empty line in selected text
+vnoremap <leader>x :g/^$/d<CR>
 
 nmap <leader>1 <Plug>BuffetSwitch(1)
 nmap <leader>2 <Plug>BuffetSwitch(2)
