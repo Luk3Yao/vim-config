@@ -91,10 +91,19 @@
   hook_source: source $VIM_PATH/config/plugins/fzf.vim
 
 # =============================================================================
-# Completion
+# Completion & Edit Action
 # =============================================================================
 - repo: neoclide/coc.nvim
   merge: 0
   rev: release
   hook_add: source  $VIM_PATH/config/plugins/coc.vim
+
+- repo: godlygeek/tabular
+
+- repo: plasticboy/vim-markdown
+
+- repo: iamcco/markdown-preview.nvim
+  on_ft: [markdown, pandoc.markdown, rmd]
+  build: 'sh -c "cd app && yarn install"'
+  hook_source: source $VIM_PATH/config/plugins/vim-markdown.vim
 
