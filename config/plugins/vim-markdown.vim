@@ -107,3 +107,15 @@ let g:mkdp_page_title = '「${name}」'
 " recognized filetypes
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
+
+iunmap <<buffer> "
+iunmap <<buffer> '
+iunmap <<buffer> `
+iunmap <<buffer> {
+iunmap <<buffer> }
+iunmap <<buffer> [
+iunmap <<buffer> ]
+iunmap <<buffer> <
+iunmap <<buffer> >
+iunmap <<buffer> (
+iunmap <<buffer> )

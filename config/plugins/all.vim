@@ -71,8 +71,6 @@ if dein#tap('coc.nvim')
     nmap <silent> gr <Plug>(coc-references)
     " Use K for show documentation in preview window
     nnoremap <silent> K :call <sid>show_documentation()<cr>
-    " use <c-space> for trigger completion.
-    inoremap <silent><expr> <c-space> coc#refresh()
     nmap [g <Plug>(coc-git-prevchunk)
     nmap ]g <Plug>(coc-git-nextchunk)
     " show chunk diff at current position
