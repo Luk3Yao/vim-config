@@ -1,7 +1,7 @@
 " =============================================================================
 " plasticboy/vim-markdown
 " =============================================================================
-let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_style_pythonic = 0
 " To disable conceal regardless of conceallevel setting
 let g:vim_markdown_conceal = 0
 " To disable math conceal with LaTeX math syntax enabled
