@@ -452,14 +452,14 @@ li .section {
 
 <ul class="scifiUI" style="list-style: none;position: relative;width: 600px;margin: 50px auto;padding: 0;font-size: 1em;color: #00bebe;">
   <li>
-    <input type="radio" name="tab" id="tab1" checked>
+    <input type="radio" name="tab" id="tab1" checked display="inline-block"/>
     <label for="tab1">Tab1</label>
     <div class="section">
      The user interface, in the industrial design field of human–machine interaction, is the space where interactions between humans and machines occur. The goal of this interaction is effective operation and control of the machine on the user's end, and feedback from the machine, which aids the operator in making operational decisions. Examples of this broad concept of user interfaces include the interactive aspects of computer operating systems, hand tools, heavy machinery operator controls, and process controls. The design considerations applicable when creating user interfaces are related to or involve such disciplines as ergonomics and psychology.
     </div>
   </li>
   <li>
-    <input type="radio" name="tab" id="tab2" />
+    <input type="radio" name="tab" id="tab2" display="inline-block"/>
     <label for="tab2">Tab2</label>
     <div class="section">
     User Experience (UX) involves a person's behaviors, attitudes, and emotions about using a particular product, system or service. User Experience includes the practical, experiential, affective, meaningful and valuable aspects of human-computer interaction and product ownership. Additionally, it includes a person’s perceptions of system aspects such as utility, ease of use and efficiency. User Experience may be considered subjective in nature to the degree that it is about individual perception and thought with respect to the system. User Experience is dynamic as it is constantly modified over time due to changing usage circumstances and changes to individual systems as well as the wider usage context in which they can be found.
