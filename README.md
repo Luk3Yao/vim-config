@@ -388,22 +388,6 @@ Big thanks to the big guys!
 - [taigacute](https://github.com/taigacute)
 
 <style>
-html, body {
-  width: 100%;
-  height: 100%;
-  font-size: 18px;
-}
-
-.scifiUI {
-  list-style: none;
-  position: relative;
-  width: 600px;
-  margin: 50px auto;
-  padding: 0;
-  font-size: 1em;
-  color: #00bebe;
-}
-
 li {
   display: inline-block;
 }
@@ -466,7 +450,7 @@ li .section {
 
 </style>
 
-<ul class="scifiUI">
+<ul class="scifiUI" style="list-style: none;position: relative;width: 600px;margin: 50px auto;padding: 0;font-size: 1em;color: #00bebe;">
   <li>
     <input type="radio" name="tab" id="tab1" checked>
     <label for="tab1">Tab1</label>
