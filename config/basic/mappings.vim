@@ -22,7 +22,6 @@ cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Write buffer (save)
 noremap <Leader>w :w<CR>
-imap <C-S> <esc>:w<CR>
 imap <C-Q> <esc>:wq<CR>
 imap <C-G> <esc>
 
