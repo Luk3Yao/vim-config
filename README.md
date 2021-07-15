@@ -57,7 +57,7 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
 
 ### Cursor shape in Tmux
 
-ref to [this](https://vi.stackexchange.com/a/22239/37028), put the follow option in your `.tmux.conf`
+refer to [this](https://vi.stackexchange.com/a/22239/37028), put the follow option in your `.tmux.conf`
 
 ```
 set -as terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[2 q'
