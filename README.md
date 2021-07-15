@@ -55,6 +55,27 @@ Best with Neovim or Vim 8 with +python3 extensions enabled.
   :call coc#util#build()
   ```
 
+### Cursor shape in Tmux
+
+ref to [this](https://vi.stackexchange.com/a/22239/37028), put the follow option in your `.tmux.conf`
+
+```
+set -as terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[2 q'
+#                           │ ├┘ ├────────┘ ├┘ ├────┘
+#                           │ │  │          │  └ override with this control sequence;
+#                           │ │  │          │    restore the cursor shape to a block
+#                           │ │  │          │
+#                           │ │  │          └ `Se` capability in the terminfo database
+#                           │ │  │
+#                           │ │  └ override the current value with this new one;
+#                           │ │    set the cursor shape to the one specified by
+#                           │ │    the digit `%d`
+#                           │ │
+#                           │ └ `Ss` capability in the terminfo database
+#                           │
+#                           └ for all terminals (no matter the value of `$TERM`)
+```
+
 ### Recommended Tools
 
 - ag (The Silver Searcher): [ggreer/the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
